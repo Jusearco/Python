@@ -1,0 +1,24 @@
+# Leer n
+n = int(input("Ingrese la cantidad de elementos: "))
+
+# Generar lista original con números aleatorios entre 1 y 100
+import random
+lista_original = [random.randint(1, 100) for _ in range(n)]
+print("Lista original:", lista_original)
+
+# Obtener máximo y mínimo
+maximo = max(lista_original)
+minimo = min(lista_original)
+
+# Crear segunda lista con los valores modificados
+lista_resultado = []
+
+for i in range(n):
+    if i % 2 == 0:  # posición par
+        valor = lista_original[i] / maximo
+    else:  # posición impar
+        valor = lista_original[i] / minimo
+    lista_resultado.append(valor)
+
+# Mostrar resultados
+print("Lista resultado:", lista_resultado)
